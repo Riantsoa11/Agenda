@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Agenda_V1_mety"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -21,7 +22,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Text="Agenda Tsiory" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="#2C3E50" FontWeight="Bold" FontFamily="Segoe UI"/>
+                    <TextBlock Text="Agenda Tsiory" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="#2C3E50" FontWeight="Bold" FontFamily="Segoe UI"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Button Content="Calendrier" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_Calendrier" Click="BTN_Calendrier_Click">
@@ -45,7 +46,7 @@
                     </Button>
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1" Name="Window_Container" Background="DarkSlateGray">
+            <Grid Grid.Column="1" Name="Window_Container" Background="#3a86ff">
 
             </Grid>
         </Grid>

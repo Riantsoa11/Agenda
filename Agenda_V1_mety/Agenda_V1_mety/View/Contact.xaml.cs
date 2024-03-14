@@ -33,11 +33,17 @@ namespace Agenda_V1_mety.View
 
         private void Modifier_Button_Click(object sender, RoutedEventArgs e)
         {
+            //sauvegarder un contact quand je clique sur le bouton modifier
+            var contact = DAO_contact.SelectedItem as Agenda_V1_mety.Agenda_tsiory.Contact;
+            dAO_Contact.modifieContact(contact);
 
         }
 
         private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
         {
+            //supprimer un contact quand je clique sur le bouton supprimer quand jai selectionné un contact dans la liste
+            var contact = DAO_contact.SelectedItem as Agenda_V1_mety.Agenda_tsiory.Contact;
+            dAO_Contact.SupprimerContact(contact.Idcontact);
 
         }
 

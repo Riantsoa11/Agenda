@@ -20,16 +20,16 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!--1er row boutton ajouter -->
-            <Button Grid.Column="0" Content="Amis" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Grid.Column="0" Content="Amis" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
             <!--2eme row boutton modifier-->
-            <Button Grid.Column="1" Content="Famille" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Grid.Column="1" Content="Famille" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
             <!--3eme row Text supprimer-->
             <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="Recherche" VerticalAlignment="Center" Width="168"/>
             <!--4eme row boutton rechercher-->
-            <Button Grid.Column="3" Content="Rechercher" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Column="3" Content="Rechercher" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
         </Grid>
         <Grid Grid.Row="1">
-            <DataGrid Name="DAO_contact" Background="Orange">
+            <DataGrid Name="DAO_contact" Background="#3a86ff">
 
             </DataGrid>
         </Grid>
@@ -40,11 +40,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!--1er row boutton ajouter -->
-            <Button Grid.Column="0" Content="Ajouter" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Ajouter_Click" />
+            <Button Grid.Column="0" Content="Ajouter" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Ajouter_Click" Width="120" />
             <!--2eme row boutton modifier-->
-            <Button Grid.Column="1" Content="Modifier" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Grid.Column="1" Content="Modifier" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
             <!--3eme row boutton supprimer-->
-            <Button Grid.Column="2" Content="Supprimer" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Content="Supprimer" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
         </Grid>
     </Grid>
 </UserControl>

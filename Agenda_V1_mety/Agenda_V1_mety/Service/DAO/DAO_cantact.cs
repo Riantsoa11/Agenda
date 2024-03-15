@@ -9,6 +9,14 @@ namespace Agenda_V1_mety.Service.DAO
 {
     class DAO_cantact
     {
+        public bool CheckDatabase()
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.Database.CanConnect();
+            }
+        }
+
         public IEnumerable<Contact> GetContacts()
         {
             using (var context = new AgendaAndrianasoloharisonContext())

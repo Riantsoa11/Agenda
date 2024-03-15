@@ -14,44 +14,43 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Agenda_V1_mety.Agenda_tsiory;
+
 namespace Agenda_V1_mety.View
 {
     /// <summary>
     /// Logique d'interaction pour Contact.xaml
     /// </summary>
-    public partial class Contact : UserControl
+    public partial class ContacPage : UserControl
     {
         DAO_cantact dAO_Contact;
-        public Contact()
+        public ContacPage()
         {
             InitializeComponent();
             dAO_Contact = new DAO_cantact();
-            DAO_contact.ItemsSource = dAO_Contact.GetContacts();
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
         }
 
 
 
-        private void Modifier_Button_Click(object sender, RoutedEventArgs e)
+        public void Modifier_Button_Click(object sender, RoutedEventArgs e)
         {
-            //sauvegarder un contact quand je clique sur le bouton modifier
-            var contact = DAO_contact.SelectedItem as Agenda_V1_mety.Agenda_tsiory.Contact;
-            dAO_Contact.modifieContact(contact);
 
         }
 
         private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
         {
-            //supprimer un contact quand je clique sur le bouton supprimer quand jai selectionné un contact dans la liste
-            var contact = DAO_contact.SelectedItem as Agenda_V1_mety.Agenda_tsiory.Contact;
+            var contact = DG_Contact.SelectedItem as Contact;
             dAO_Contact.SupprimerContact(contact.Idcontact);
 
         }
 
-        private void Ajouter_Click(object sender, RoutedEventArgs e)
+        private void BTN_Ajouter_Click(object sender, RoutedEventArgs e)
         {
-            //bouton ajouter qui va vers la page ajouter
-            Ajouter ajouter = new Ajouter();
-            this.Content = ajouter;
+            //ajouter un contact quand je clique sur le bouton ajouter
+            AjouterPage ajouterPage = new AjouterPage();
+            this.Content = ajouterPage;
+
         }
     }
 }

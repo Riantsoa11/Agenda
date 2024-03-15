@@ -22,15 +22,35 @@ namespace Agenda_V1_mety
     /// </summary>
     public partial class MainWindow : Window
     {
+        DAO_cantact dAO_Cantact;
         public MainWindow()
         {
             InitializeComponent();
+
+            dAO_Cantact = new DAO_cantact();
+
+            if (dAO_Cantact.CheckDatabase())
+            {
+                MessageBox.Show("Database Connected");
+            }
+            else
+            {
+                MessageBox.Show("DatabaseNotConnected");
+                BoutonStatut(false); 
+            }
+
         }
-       
+        private void BoutonStatut(bool estActif)
+        {
+            BTN_Contact.IsEnabled = estActif;
+            BTN_Calendrier.IsEnabled = estActif;
+            BTN_Reseau.IsEnabled = estActif;
+        }       
+
         private void BTN_Contact_Click(object sender, RoutedEventArgs e)
         {
             Window_Container.Children.Clear();
-            Contact contact = new Contact();
+            ContacPage contact = new ContacPage();
             Window_Container.Children.Add(contact);
         }
 

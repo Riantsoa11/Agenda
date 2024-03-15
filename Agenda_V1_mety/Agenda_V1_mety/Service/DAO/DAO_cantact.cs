@@ -40,11 +40,10 @@ namespace Agenda_V1_mety.Service.DAO
                 context.SaveChanges();
             }
         }
-        public void SupprimerContact(int id)
+        public void SupprimerContact(Contact contact)
         {
             using (var context = new AgendaAndrianasoloharisonContext())
             {
-                var contact = context.Contacts.Find(id);
                 context.Contacts.Remove(contact);
                 context.SaveChanges();
             }

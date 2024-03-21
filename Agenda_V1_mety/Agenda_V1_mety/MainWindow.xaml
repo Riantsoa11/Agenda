@@ -37,7 +37,7 @@
                     </Button>
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button Content="Reseau" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_Reseau" Click="BTN_Reseau_Click">
+                    <Button Content="To Do List" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_ToDoList" Click="BTN_ToDoList_Click">
 
                     </Button>
                 </Grid>

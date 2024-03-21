@@ -44,7 +44,7 @@ namespace Agenda_V1_mety
         {
             BTN_Contact.IsEnabled = estActif;
             BTN_Calendrier.IsEnabled = estActif;
-            BTN_Reseau.IsEnabled = estActif;
+            BTN_ToDoList.IsEnabled = estActif;
         }       
 
         private void BTN_Contact_Click(object sender, RoutedEventArgs e)
@@ -66,11 +66,11 @@ namespace Agenda_V1_mety
             Window_Container.Children.Add(calendrier);
         }
 
-        private void BTN_Reseau_Click(object sender, RoutedEventArgs e)
+        private void BTN_ToDoList_Click(object sender, RoutedEventArgs e)
         {
             Window_Container.Children.Clear();
-            Reseau reseau = new Reseau();
-            Window_Container.Children.Add(reseau);
+            ToDoList toDoList = new ToDoList();
+            Window_Container.Children.Add(toDoList);
         }
     }
 }

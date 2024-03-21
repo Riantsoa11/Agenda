@@ -38,13 +38,6 @@ namespace Agenda_V1_mety.View
             DG_Contact.ItemsSource = dAO_Contact.GetContacts();
         }
 
-        private void Supprimer_Button_Click(object sender, RoutedEventArgs e)
-        {
-            Contact contact = (Contact)DG_Contact.SelectedItem;
-            dAO_Contact.SupprimerContact(contact);
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
-        }
-
         private void BTN_Ajouter_Click(object sender, RoutedEventArgs e)
         {
             //ajouter un contact quand je clique sur le bouton ajouter
@@ -52,5 +45,48 @@ namespace Agenda_V1_mety.View
             this.Content = ajouterPage;
 
         }
+
+        private void BTN_Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+            Contact contact = (Contact)DG_Contact.SelectedItem;
+            dAO_Contact.SupprimerContact(contact);
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
+        }
+
+        private void BTN_Modifier_Click(object sender, RoutedEventArgs e)
+        {
+            //je clique sur la ligne que je veux modifier et je change ce que je veux et je clique sur le bouton modifier
+            Contact contact = DG_Contact.SelectedItem as Contact;
+            dAO_Contact.modifieContact(contact);
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
+            MessageBox.Show("Contact modifié avec succès");
+        }
+
+        private void BTN_Famille_Click(object sender, RoutedEventArgs e)
+        {
+            //je clique sur le bouton famille pour afficher les contacts de la famille
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Famille").ToList();
+        }
+
+        private void BTN_Amis_Click(object sender, RoutedEventArgs e)
+        {
+            //je clique sur le bouton amis pour afficher les contacts des amis
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Amis").ToList();
+        }
+
+        private void BTN_College_Click(object sender, RoutedEventArgs e)
+        {
+            //je clique sur le bouton college pour afficher les contacts des collegues
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Collegue").ToList();
+        }
+
+        private void BTN_Recherche_Click(object sender, RoutedEventArgs e)
+        {
+            //je recherche un contact par son nom
+            DG_Contact.ItemsSource = dAO_Contact.RechercherContactParNom(TB_Recherche.Text);
+            //je recherche un contact par son prenom
+            DG_Contact.ItemsSource = dAO_Contact.RechercherContactParPrenom(TB_Recherche.Text);
+        }
+        
     }
 }

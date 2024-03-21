@@ -18,15 +18,18 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!--1er row boutton ajouter -->
-            <Button Grid.Column="0" Content="Amis" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+            <Button Grid.Column="0" Content="Amis" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Amis_Click"/>
             <!--2eme row boutton modifier-->
-            <Button Grid.Column="1" Content="Famille" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+            <Button Grid.Column="1" Content="Collegue" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_College_Click"/>
+            <!--2eme row boutton modifier-->
+            <Button Grid.Column="2" Content="Famille" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Famille_Click"/>
             <!--3eme row Text supprimer-->
-            <TextBox Grid.Column="2" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="Recherche" VerticalAlignment="Center" Width="168"/>
+            <TextBox Grid.Column="3" HorizontalAlignment="Center" Height="30" TextWrapping="Wrap" Text="Recherche" VerticalAlignment="Center" Width="168" Name="TB_Recherche" />
             <!--4eme row boutton rechercher-->
-            <Button Grid.Column="3" Content="Rechercher" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+            <Button Grid.Column="4" Content="Rechercher" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Recherche_Click" />
         </Grid>
         <Grid Grid.Row="1">
             <DataGrid Name="DG_Contact" Background="#3a86ff">
@@ -38,13 +41,12 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <!--1er row boutton ajouter -->
-            <Button Grid.Column="0" Content="Ajouter" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Ajouter_Click" />
-            <!--2eme row boutton modifier-->
-            <Button Grid.Column="1" Content="Modifier" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-            <!--3eme row boutton supprimer-->
-            <Button Grid.Column="2" Content="Supprimer" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+            <Button Grid.Column="0" Content="Reseau" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+            <Button Grid.Column="1" Content="Modifier" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Modifier_Click"/>
+            <Button Grid.Column="2" Content="Ajouter" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Ajouter_Click" />
+            <Button Grid.Column="3" Content="Supprimer" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="BTN_Supprimer_Click"/>
         </Grid>
     </Grid>
 </UserControl>

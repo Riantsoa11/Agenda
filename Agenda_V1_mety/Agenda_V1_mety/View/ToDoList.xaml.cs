@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Agenda_V1_mety.View
 {
     /// <summary>
-    /// Logique d'interaction pour Reseau.xaml
+    /// Logique d'interaction pour ToDoList.xaml
     /// </summary>
-    public partial class Reseau : UserControl
+    public partial class ToDoList : UserControl
     {
-        public Reseau()
+        public ToDoList()
         {
             InitializeComponent();
         }

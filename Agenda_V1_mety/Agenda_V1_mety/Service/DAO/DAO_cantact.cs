@@ -34,18 +34,45 @@ namespace Agenda_V1_mety.Service.DAO
         }
         public void modifieContact(Contact contact)
         {
+            //modifier un contact
             using (var context = new AgendaAndrianasoloharisonContext())
             {
-                context.Contacts.Add(contact);
+                context.Contacts.Update(contact);
                 context.SaveChanges();
             }
+
         }
+
         public void SupprimerContact(Contact contact)
         {
             using (var context = new AgendaAndrianasoloharisonContext())
             {
                 context.Contacts.Remove(contact);
                 context.SaveChanges();
+            }
+        }
+        
+        public IEnumerable<Contact> RechercherContactParNom(string nom)
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.Contacts.Where(c => c.Nom.Contains(nom)).ToList();
+            }
+        }
+        public IEnumerable<Contact> RechercherContactParPrenom(string prenom)
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.Contacts.Where(c => c.Prenom.Contains(prenom)).ToList();
+            }
+        }
+        
+        //rechercher les contacts qui sont des amis
+        public IEnumerable<Contact> RechercherContactStatut(string statut)
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.Contacts.Where(c => c.Statut == statut).ToList();
             }
         }
     }

@@ -102,10 +102,10 @@ namespace Agenda_V1_mety.View
 
         private void BTN_Reseau_Click(object sender, RoutedEventArgs e)
         {
+            //je veux afficher la reseau_sociaux du contact selectioner dans la liste des contacts dans la page ReseauContact
             Contact contact = DG_Contact.SelectedItem as Contact; // Récupération du contact sélectionné dans le DataGrid
-            //je clique sur le bouton reseau pour afficher la page reseau
-            ReseauContact reseauContact = new ReseauContact();
-            this.Content = reseauContact;
+            ReseauContact reseauContact = new ReseauContact(contact); // Instanciation de la page ReseauContact
+            this.Content = reseauContact; // Affichage de la page ReseauContact
 
         }
     }

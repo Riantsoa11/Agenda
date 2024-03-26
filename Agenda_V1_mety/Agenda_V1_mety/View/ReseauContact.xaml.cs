@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda_V1_mety.Agenda_tsiory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,27 @@ namespace Agenda_V1_mety.View
     /// </summary>
     public partial class ReseauContact : UserControl
     {
-        public ReseauContact()
+
+       
+        private Contact contact; // Ajoutez un champ pour stocker le contact
+
+        // Créez un constructeur prenant un argument de type Contact
+        public ReseauContact(Contact contact)
         {
             InitializeComponent();
+            this.contact = contact; // Enregistrez le contact passé en argument
+            AfficherInfosContact();
         }
 
+        // Méthode pour afficher les informations du contact dans votre page
+        private void AfficherInfosContact()
+        {
+            TB_Name.Text = contact.Nom;
+            TB_Prenom.Text = contact.Prenom;
+            TB_Reseausociaux.Text = contact.Reseau;
+            
+  
+        }
         private void BTN_Retor_Click(object sender, RoutedEventArgs e)
         {
             ContacPage contact = new ContacPage();

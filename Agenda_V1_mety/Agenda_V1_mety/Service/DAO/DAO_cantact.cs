@@ -89,14 +89,17 @@ namespace Agenda_V1_mety.Service.DAO
                 return context.Contacts.Where(c => c.Statut == statut).ToList();  // Recherche des contacts par statut.
             }
         }
-        //jointure entre contact et reseaux sociaux
-        public IEnumerable<Contact> GetContactReseauxSociaux()
+        
+        //jointure entre les tables contact et reseau social
+        public IEnumerable<Contact> GetContactReseau()
         {
-            using (var context = new AgendaAndrianasoloharisonContext())
+            using (var context = new AgendaAndrianasoloharisonContext())  // Création d'un contexte pour la base de données Agenda.
             {
-                return context.Contacts.Include(c => c.ReseauSociauxes).ToList();
+                return context.Contacts.Include(c => c.ReseauSociaux).ToList();  // Récupération de tous les contacts de la base de données.
             }
         }
+        
 
+        
     }
-}
+} 

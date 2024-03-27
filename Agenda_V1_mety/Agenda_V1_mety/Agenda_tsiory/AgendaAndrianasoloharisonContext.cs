@@ -100,9 +100,9 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
             entity.Property(e => e.Profil).HasMaxLength(45);
             entity.Property(e => e.ReseauSociau)
                 .HasMaxLength(45)
-                .HasColumnName("Reseau sociau");
+                .HasColumnName("Reseau_sociaux");
 
-            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.ReseauSociauxes)
+            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.ReseauSociaux)
                 .HasForeignKey(d => d.ContactIdcontact)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_reseau_sociaux_contact1");

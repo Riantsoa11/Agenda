@@ -32,6 +32,15 @@ namespace Agenda_V1_mety.Service.DAO
                 context.SaveChanges();
             }
         }
-        
+
+        public ReseauSociaux GetReseauSociauxByIdcontact(int idContact)
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.ReseauSociauxes.Where(r => r.ContactIdcontact == idContact).FirstOrDefault();
+            }
+        }
+
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using Agenda_V1_mety.Service.DAO; // Importation des espaces de noms nécessaires
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,99 +13,112 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Agenda_V1_mety.Agenda_tsiory; // Importation des espaces de noms nécessaires
+using Agenda_V1_mety.Service.DAO;
+using Agenda_V1_mety.Agenda_tsiory;
+
+
+
 
 namespace Agenda_V1_mety.View
 {
-    // Définition de la classe ContacPage
+
     public partial class ContacPage : UserControl
     {
-        DAO_cantact dAO_Contact; // Déclaration d'un objet DAO_cantact
+        // Déclaration d'un objet DAO_cantact
+        DAO_cantact dAO_Contact; 
 
         // Constructeur de la classe ContacPage
         public ContacPage()
         {
             InitializeComponent();
-            dAO_Contact = new DAO_cantact(); // Instanciation de l'objet DAO_cantact
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts(); // Définition de la source de données pour le DataGrid
+            // Instanciation de l'objet DAO_cantact
+            dAO_Contact = new DAO_cantact(); 
+            // Définition de la source de données pour le DataGrid
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
         }
 
-        // Méthode appelée lors du clic sur le bouton de modification
-        public void Modifier_Button_Click(object sender, RoutedEventArgs e)
-        {
-            Contact contact = DG_Contact.SelectedItem as Contact; // Récupération du contact sélectionné dans le DataGrid
-            dAO_Contact.modifieContact(contact); // Appel de la méthode de modification du contact
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts(); // Actualisation de la source de données du DataGrid
-        }
-
-        // Méthode appelée lors du clic sur le bouton d'ajout
+        // Boutton ajouter
         private void BTN_Ajouter_Click(object sender, RoutedEventArgs e)
         {
-            AjouterPage ajouterPage = new AjouterPage(); // Instanciation de la page d'ajout
-            this.Content = ajouterPage; // Affichage de la page d'ajout
+            AjouterPage ajouterPage = new AjouterPage();
+            this.Content = ajouterPage; 
         }
 
-        // Méthode appelée lors du clic sur le bouton de suppression
+        // Boutton supprimer
         private void BTN_Supprimer_Click(object sender, RoutedEventArgs e)
         {
-            Contact contact = (Contact)DG_Contact.SelectedItem; // Récupération du contact sélectionné dans le DataGrid
-            dAO_Contact.SupprimerContact(contact); // Appel de la méthode de suppression du contact
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts(); // Actualisation de la source de données du DataGrid
-            MessageBox.Show("Contact supprimé avec succès"); // Affichage d'un message de succès
+            // Récupération du contact sélectionné dans le DataGrid
+            Contact contact = (Contact)DG_Contact.SelectedItem;
+            // Appel de la méthode de suppression du contact
+            dAO_Contact.SupprimerContact(contact);
+            // Actualisation de la source de données du DataGrid
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts(); 
+            MessageBox.Show("Contact supprimé avec succès");
         }
 
-        // Méthode appelée lors du clic sur le bouton de modification
+        // Boutton modifier
         private void BTN_Modifier_Click(object sender, RoutedEventArgs e)
         {
-            Contact contact = DG_Contact.SelectedItem as Contact; // Récupération du contact sélectionné dans le DataGrid
-            dAO_Contact.modifieContact(contact); // Appel de la méthode de modification du contact
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts(); // Actualisation de la source de données du DataGrid
-            MessageBox.Show("Contact modifié avec succès"); // Affichage d'un message de succès
+            // Récupération du contact sélectionné dans le DataGrid
+            Contact contact = DG_Contact.SelectedItem as Contact;
+            // Appel de la méthode de modification du contact
+            dAO_Contact.modifieContact(contact);
+            // Actualisation de la source de données du DataGrid
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts();
+            MessageBox.Show("Contact modifié avec succès"); 
         }
 
         // Méthode appelée lors du clic sur le bouton "Famille"
         private void BTN_Famille_Click(object sender, RoutedEventArgs e)
         {
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Famille").ToList(); // Filtrage des contacts par statut "Famille"
+            // Filtrage des contacts par statut "Famille"
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Famille").ToList(); 
         }
 
         // Méthode appelée lors du clic sur le bouton "Amis"
         private void BTN_Amis_Click(object sender, RoutedEventArgs e)
         {
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Amis").ToList(); // Filtrage des contacts par statut "Amis"
+            // Filtrage des contacts par statut "Amis"
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Amis").ToList(); 
         }
 
         // Méthode appelée lors du clic sur le bouton "Collegue"
         private void BTN_College_Click(object sender, RoutedEventArgs e)
         {
-            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Collegue").ToList(); // Filtrage des contacts par statut "Collegue"
+            // Filtrage des contacts par statut "Collegue"
+            DG_Contact.ItemsSource = dAO_Contact.GetContacts().Where(c => c.Statut == "Collegue").ToList(); 
         }
 
-        // Méthode appelée lors du clic sur le bouton de recherche
+        // Boutton recherche
         private void BTN_Recherche_Click(object sender, RoutedEventArgs e)
         {
             // Recherche par nom
-            var contactsParNom = dAO_Contact.RechercherContactParNom(TB_Recherche.Text); // Recherche des contacts par nom
+            var contactsParNom = dAO_Contact.RechercherContactParNom(TB_Recherche.Text); 
 
             // Si aucun contact n'est trouvé par nom, recherche par prénom
             if (contactsParNom.Any())
             {
-                DG_Contact.ItemsSource = contactsParNom; // Affichage des contacts trouvés par nom
+                // Affichage des contacts trouvés par nom
+                DG_Contact.ItemsSource = contactsParNom; 
             }
             else
             {
-                var contactsParPrenom = dAO_Contact.RechercherContactParPrenom(TB_Recherche.Text); // Recherche des contacts par prénom
-                DG_Contact.ItemsSource = contactsParPrenom; // Affichage des contacts trouvés par prénom
+                // Recherche des contacts par prénom
+                var contactsParPrenom = dAO_Contact.RechercherContactParPrenom(TB_Recherche.Text);
+                // Affichage des contacts trouvés par prénom
+                DG_Contact.ItemsSource = contactsParPrenom;
             }
         }
 
         private void BTN_Reseau_Click(object sender, RoutedEventArgs e)
         {
-            //je veux afficher la reseau_sociaux du contact selectioner dans la liste des contacts dans la page ReseauContact
-            Contact contact = DG_Contact.SelectedItem as Contact; // Récupération du contact sélectionné dans le DataGrid
-            ReseauContact reseauContact = new ReseauContact(contact); // Instanciation de la page ReseauContact
-            this.Content = reseauContact; // Affichage de la page ReseauContact
+            // Récupération du contact sélectionné dans le DataGrid
+            Contact contact = DG_Contact.SelectedItem as Contact;
+            // Instanciation de la page ReseauContact
+            ReseauContact reseauContact = new ReseauContact(contact);
+            this.Content = reseauContact;
 
         }
+
     }
 }

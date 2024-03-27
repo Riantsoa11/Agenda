@@ -73,7 +73,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Button Content="Retour" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="170" Click="BTN_Retor_Click" />
+                <Button Content="Retour" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="170" Click="BTN_Retour_Click" />
             </Grid>
             <Grid Grid.Column="1">
                 <Button Content="Modier" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="170" />

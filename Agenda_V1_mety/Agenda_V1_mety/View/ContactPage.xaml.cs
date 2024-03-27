@@ -92,6 +92,7 @@ namespace Agenda_V1_mety.View
         // Boutton recherche
         private void BTN_Recherche_Click(object sender, RoutedEventArgs e)
         {
+            
             // Recherche par nom
             var contactsParNom = dAO_Contact.RechercherContactParNom(TB_Recherche.Text); 
 

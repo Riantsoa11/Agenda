@@ -45,15 +45,26 @@ namespace Agenda_V1_mety.View
         //afficher les informations du contact et son reseau social
         private void AfficherInfosContact()
         {
+            DAO_ReseauSociaux = new DAO_ReseauSociaux();
+            var reseauSociaux = DAO_ReseauSociaux.GetReseauSociauxByIdcontact(contact.Idcontact);
+
+            //si on clique sur le bouton reseau et que le contact n'a pas de profil et de lien afficher null dans les textbox
+            if (reseauSociaux == null)
+            {
+                TB_Liens.Text = "Aucune";
+                TB_Profil.Text = "Aucune";
+            }
+            else
+            {
+                TB_Liens.Text = reseauSociaux.Liens;
+                TB_Profil.Text = reseauSociaux.Profil;
+            }
 
             TB_Name.Text = contact.Nom;
             TB_Prenom.Text = contact.Prenom;
             TB_Reseausociaux.Text = contact.Reseau;
 
-            DAO_ReseauSociaux = new DAO_ReseauSociaux();
-            var reseauSociaux = DAO_ReseauSociaux.GetReseauSociauxByIdcontact(contact.Idcontact);
-            TB_Liens.Text = reseauSociaux.Liens;
-            TB_Profil.Text = reseauSociaux.Profil;
+
         }
 
 

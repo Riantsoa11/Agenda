@@ -59,6 +59,7 @@ namespace Agenda_V1_mety.View
             {
                 TB_Liens.Text = reseauSociaux.Liens;
                 TB_Profil.Text = reseauSociaux.Profil;
+                TB_idReseauSociaux.Text = reseauSociaux.IdreseauSociaux.ToString();
             }
 
             TB_Name.Text = contact.Nom;
@@ -109,7 +110,9 @@ namespace Agenda_V1_mety.View
                 {
                     Liens = TB_Liens.Text,
                     Profil = TB_Profil.Text,
-                    ContactIdcontact = contact.Idcontact
+                    ContactIdcontact = contact.Idcontact,
+                    IdreseauSociaux = int.Parse(TB_idReseauSociaux.Text)
+                    
                 };
                 DAO_ReseauSociaux.modifieReseauSociaux(reseauSociaux);
                 MessageBox.Show("Reseau social modifié avec succès");

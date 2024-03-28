@@ -47,6 +47,14 @@ namespace Agenda_V1_mety.View
         // Boutton supprimer
         private void BTN_Supprimer_Click(object sender, RoutedEventArgs e)
         {
+            //btn supprimer est desactivé si aucun contact n'est selectionné
+            if (!dAO_Contact.CheckContactSelectionne(DG_Contact.SelectedItem))
+            {
+                MessageBox.Show("Veuillez sélectionner un contact à supprimer");
+                return;
+            }
+
+
             // Récupération du contact sélectionné dans le DataGrid
             Contact contact = (Contact)DG_Contact.SelectedItem;
             // Appel de la méthode de suppression du contact
@@ -59,6 +67,20 @@ namespace Agenda_V1_mety.View
         // Boutton modifier
         private void BTN_Modifier_Click(object sender, RoutedEventArgs e)
         {
+            //btn modifier est desactivé si aucun contact n'est selectionné
+            if (!dAO_Contact.CheckContactSelectionne(DG_Contact.SelectedItem))
+            {
+                MessageBox.Show("Veuillez sélectionner un contact à modifier");
+                return;
+            }
+
+            //on peut pas modifier un contact si aucun contact n'est selectionné
+            if (DG_Contact.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un contact à modifier");
+                return;
+            }
+
             // Récupération du contact sélectionné dans le DataGrid
             Contact contact = DG_Contact.SelectedItem as Contact;
             // Appel de la méthode de modification du contact
@@ -113,6 +135,13 @@ namespace Agenda_V1_mety.View
 
         private void BTN_Reseau_Click(object sender, RoutedEventArgs e)
         {
+            //btn reseau est desactivé si aucun contact n'est selectionné
+            if (!dAO_Contact.CheckContactSelectionne(DG_Contact.SelectedItem))
+            {
+                MessageBox.Show("Veuillez sélectionner un contact pour regzarder un réseau sociaux");
+                return;
+            }
+
             // Récupération du contact sélectionné dans le DataGrid
             Contact contact = DG_Contact.SelectedItem as Contact;
             // Instanciation de la page ReseauContact

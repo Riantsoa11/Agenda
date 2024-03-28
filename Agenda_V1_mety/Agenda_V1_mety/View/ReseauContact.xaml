@@ -63,7 +63,7 @@
                 </Grid>
                 <Grid Grid.Row="4">
                     <TextBox TextWrapping="Wrap" TextAlignment="Center" Text="TextBox" Width="300" Height="70" FontSize="20" Name="TB_Liens"/>
-
+                    <TextBox TextWrapping="Wrap" TextAlignment="Center" Text="TextBox" Width="300" Height="70" FontSize="20" Visibility="Hidden" Name="TB_idReseauSociaux"/>
                 </Grid>
             </Grid>
         </Grid>

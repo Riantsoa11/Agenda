@@ -19,6 +19,16 @@ namespace Agenda_V1_mety.Service.DAO
             }
         }
 
+        //si un contact n'est pas selectionner , le boutton supprimer est desactivé
+        public bool CheckContactSelectionne(object contact)
+        {
+            if (contact == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         // Méthode pour récupérer tous les contacts de la base de données.
         public IEnumerable<Contact> GetContacts()
         {
@@ -59,6 +69,12 @@ namespace Agenda_V1_mety.Service.DAO
             // Suppression d'un contact et de ses réseaux_sociaux associés dans la base de données.
             using (var context = new AgendaAndrianasoloharisonContext())  // Création d'un contexte pour la base de données Agenda.
             {
+                var reseauSociaux = context.ReseauSociauxes.Where(r => r.ContactIdcontact.Equals(contact.Idcontact)).ToList();  // Récupération des réseaux_sociaux associés au contact.
+                // Suppression des réseaux_sociaux associés au contact egale à l'id du contact.
+                foreach (var r in reseauSociaux)
+                {
+                    context.ReseauSociauxes.Remove(r);  // Suppression des réseaux_sociaux associés au contact.
+                }
                 context.Contacts.Remove(contact);  // Suppression du contact dans le contexte.
                 context.SaveChanges();  // Enregistrement des modifications dans la base de données.
             }

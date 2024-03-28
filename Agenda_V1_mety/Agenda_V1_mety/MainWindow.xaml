@@ -23,32 +23,61 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Text="Agenda Tsiory" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="#2C3E50" FontWeight="Bold" FontFamily="Segoe UI"/>
+                    <TextBlock Text="Agenda Tsiory" HorizontalAlignment="Center" TextDecorations="Underline" VerticalAlignment="Center" FontSize="24" Foreground="#2C3E50" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Button Content="Calendrier" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_Calendrier" Click="BTN_Calendrier_Click">
-
+                    <Button Content="Calendrier" Foreground="Black"  Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_Calendrier" Click="BTN_Calendrier_Click">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="📅" FontSize="30" HorizontalAlignment="Center"/>
+                                    <TextBlock Text=" Calendrier" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
                     </Button>
+                   
 
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Button Content="Contact" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_Contact" Click="BTN_Contact_Click">
-
+                    <Button Content="Contact" Foreground="Black"  Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_Contact" Click="BTN_Contact_Click">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="👥" FontSize="30" />
+                                    <TextBlock Text=" Contact" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
                     </Button>
+                    
                 </Grid>
                 <Grid Grid.Row="3">
-                    <Button Content="To Do List" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_ToDoList" Click="BTN_ToDoList_Click">
-
+                    <Button Content="Liste" Foreground="Black" Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_ToDoList" Click="BTN_ToDoList_Click">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="📋" FontSize="30" />
+                                    <TextBlock Text=" Liste" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
                     </Button>
                 </Grid>
                 <Grid Grid.Row="4">
-                    <Button Content="Retour" HorizontalAlignment="Center" Height="50" VerticalAlignment="Center" Width="105" Name="BTN_Retour" Click="BTN_Retour_Click_1">
-
+                    <Button Content="Retour" Foreground="Black" Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_Retour" Click="BTN_Retour_Click">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="🔙" FontSize="30" />
+                                    <TextBlock Text="Retour" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
                     </Button>
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1" Name="Window_Container" Background="#3a86ff">
-
+            <Grid Grid.Column="1" Name="Window_Container" Background="#FF88758E">
             </Grid>
         </Grid>
     </Grid>

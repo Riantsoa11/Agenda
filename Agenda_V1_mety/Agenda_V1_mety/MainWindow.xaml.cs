@@ -54,7 +54,7 @@ namespace Agenda_V1_mety
             Window_Container.Children.Add(contact);
         }
 
-        private void BTN_Retour_Click_1(object sender, RoutedEventArgs e)
+        private void BTN_Retour_Click(object sender, RoutedEventArgs e)
         {
             Window_Container.Children.Clear();
         }
@@ -72,5 +72,6 @@ namespace Agenda_V1_mety
             ToDoList toDoList = new ToDoList();
             Window_Container.Children.Add(toDoList);
         }
+
     }
 }

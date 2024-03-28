@@ -33,6 +33,7 @@ namespace Agenda_V1_mety.View
             InitializeComponent();
             this.contact = contact; // Enregistrez le contact passé en argument
             AfficherInfosContact();
+            DAO_ReseauSociaux = new DAO_ReseauSociaux();
         }
 
         public ReseauContact(ReseauSociaux reseauSociaux)
@@ -48,7 +49,7 @@ namespace Agenda_V1_mety.View
             DAO_ReseauSociaux = new DAO_ReseauSociaux();
             var reseauSociaux = DAO_ReseauSociaux.GetReseauSociauxByIdcontact(contact.Idcontact);
 
-            //si on clique sur le bouton reseau et que le contact n'a pas de profil et de lien afficher null dans les textbox
+
             if (reseauSociaux == null)
             {
                 TB_Liens.Text = "Aucune";
@@ -73,6 +74,46 @@ namespace Agenda_V1_mety.View
         {
             ContacPage contact = new ContacPage();
             this.Content = contact;
+        }
+
+        private void BTN_Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            //Ajouter un reseau social au contact selectionné si son pfofil et son lien sont null
+            if (TB_Liens.Text == null || TB_Profil.Text == null)
+            {
+                MessageBox.Show("Veuillez remplir les champs");
+            }
+            else
+            {
+                ReseauSociaux reseauSociaux = new ReseauSociaux
+                {
+                    Liens = TB_Liens.Text,
+                    Profil = TB_Profil.Text,
+                    ContactIdcontact = contact.Idcontact
+                };
+                DAO_ReseauSociaux.AjouterReseauSociaux(reseauSociaux);
+                MessageBox.Show("Reseau social ajouté avec succès");
+            }
+        }
+
+        private void BTN_Modifier_Click(object sender, RoutedEventArgs e)
+        {
+            //modifier le profil et le lien du reseau social du contact selectionné
+            if (TB_Liens.Text == null || TB_Profil.Text == null)
+            {
+                MessageBox.Show("Veuillez remplir les champs");
+            }
+            else
+            {
+                ReseauSociaux reseauSociaux = new ReseauSociaux
+                {
+                    Liens = TB_Liens.Text,
+                    Profil = TB_Profil.Text,
+                    ContactIdcontact = contact.Idcontact
+                };
+                DAO_ReseauSociaux.modifieReseauSociaux(reseauSociaux);
+                MessageBox.Show("Reseau social modifié avec succès");
+            }
         }
     }
 }

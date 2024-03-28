@@ -22,4 +22,10 @@
     <Folder Include="Service\Images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Service\Images\calendrier.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

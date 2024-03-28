@@ -56,9 +56,10 @@ namespace Agenda_V1_mety.Service.DAO
         // Méthode pour supprimer un contact de la base de données.
         public void SupprimerContact(Contact contact)
         {
+            // Suppression d'un contact et de ses réseaux_sociaux associés dans la base de données.
             using (var context = new AgendaAndrianasoloharisonContext())  // Création d'un contexte pour la base de données Agenda.
             {
-                context.Contacts.Remove(contact);  // Suppression du contact du contexte.
+                context.Contacts.Remove(contact);  // Suppression du contact dans le contexte.
                 context.SaveChanges();  // Enregistrement des modifications dans la base de données.
             }
         }

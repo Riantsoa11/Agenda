@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Agenda_V1_mety.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Aqua">
-            
+    <Grid Background="#FF88758E">
+        <Image Height="400" Width="600" Source="\Service\Images\calendrier.jpg"/>
     </Grid>
 </UserControl>

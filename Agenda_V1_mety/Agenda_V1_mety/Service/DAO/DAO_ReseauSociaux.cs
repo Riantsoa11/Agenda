@@ -42,5 +42,19 @@ namespace Agenda_V1_mety.Service.DAO
         }
 
 
+        //modifier un reseau social
+        public void modifieReseauSociaux(ReseauSociaux reseauSociaux)
+        {
+            if (reseauSociaux != null)
+            {
+                using (var context = new AgendaAndrianasoloharisonContext())
+                {
+                    context.ReseauSociauxes.Update(reseauSociaux);
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
     }
 }

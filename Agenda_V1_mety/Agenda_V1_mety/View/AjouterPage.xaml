@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Agenda_V1_mety.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Beige" Name="Window_Container">
+    <Grid Background="#FF88758E" Name="Window_Container">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Label Content="Ajouter Contact" HorizontalAlignment="Center" FontSize="20"/>
+                <Label Content="Ajouter Contact" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="20" Foreground="#2C3E50" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic"/>
 
             </Grid>
         </Grid>
@@ -36,7 +36,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Nom" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" TextWrapping="Wrap" Text="Nom" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Nom"/>
@@ -48,7 +48,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Prenom" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Prenom" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Prenom"/>
@@ -60,7 +60,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Age" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Age" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Age"/>
@@ -72,7 +72,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Sexe" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Sexe" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Sexe"/>
@@ -84,7 +84,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Date de Naissance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Date de Naissance" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <DatePicker Width="365" Name="DP_Date_naissance"></DatePicker>
@@ -96,7 +96,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Email" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Email" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Email"/>
@@ -109,7 +109,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Phone" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Phone" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Phone"/>
@@ -121,7 +121,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Ville" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Ville" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Ville"/>
@@ -133,7 +133,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="Statut" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="Statut" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Statut"/>
@@ -145,7 +145,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock  Height="15"  TextWrapping="Wrap" Text="reseau" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
+                <TextBlock  Height="15"  TextWrapping="Wrap" FontWeight="Bold" FontFamily="Segoe UI" FontStyle="Italic" Text="reseau" HorizontalAlignment="Center" VerticalAlignment="Center" Width="242" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBox HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" Name="TB_Reseau" />

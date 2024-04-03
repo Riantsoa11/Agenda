@@ -27,7 +27,7 @@ public partial class Contact
 
     public string Reseau { get; set; } = null!;
 
-    public virtual ICollection<ReseauSociaux> ReseauSociaux { get; set; } = new List<ReseauSociaux>();
+    public virtual ICollection<ReseauSociaux> ReseauSociauxes { get; set; } = new List<ReseauSociaux>();
 
     public virtual ICollection<Status> Statuses { get; set; } = new List<Status>();
 

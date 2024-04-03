@@ -7,7 +7,7 @@ public partial class ReseauSociaux
 {
     public int IdreseauSociaux { get; set; }
 
-    public string? ReseauSociau { get; set; }
+    public string? ReseauSociaux1 { get; set; }
 
     public string? Liens { get; set; }
 

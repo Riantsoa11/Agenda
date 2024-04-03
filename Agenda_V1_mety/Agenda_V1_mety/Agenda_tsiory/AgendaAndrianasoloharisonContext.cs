@@ -26,14 +26,12 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
     public virtual DbSet<Task> Tasks { get; set; }
 
     public virtual DbSet<Todolist> Todolists { get; set; }
-    public object ReseauSociaux { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
         //=> optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
-
-
+    //connnexion a la base de donnée distance
+    => optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -63,7 +61,7 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
                 .HasColumnType("enum('Masculin','Feminin')")
                 .HasColumnName("sexe");
             entity.Property(e => e.Statut)
-                .HasColumnType("enum('Amis','Collegue')")
+                .HasColumnType("enum('Amis','Collegue','Famille')")
                 .HasColumnName("statut");
             entity.Property(e => e.Ville).HasMaxLength(45);
         });
@@ -101,11 +99,11 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
             entity.Property(e => e.ContactIdcontact).HasColumnName("contact_idcontact");
             entity.Property(e => e.Liens).HasMaxLength(45);
             entity.Property(e => e.Profil).HasMaxLength(45);
-            entity.Property(e => e.ReseauSociau)
+            entity.Property(e => e.ReseauSociaux1)
                 .HasMaxLength(45)
                 .HasColumnName("Reseau_sociaux");
 
-            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.ReseauSociaux)
+            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.ReseauSociauxes)
                 .HasForeignKey(d => d.ContactIdcontact)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_reseau_sociaux_contact1");

@@ -107,15 +107,14 @@ namespace Agenda_V1_mety.Service.DAO
             }
         }
         
-        //jointure entre les tables contact et reseau social
+        //joindre les tables contact et reseau_sociaux
         public IEnumerable<Contact> GetContactReseau()
         {
             using (var context = new AgendaAndrianasoloharisonContext())  // Création d'un contexte pour la base de données Agenda.
             {
-                return context.Contacts.Include(c => c.ReseauSociaux).ToList();  // Récupération de tous les contacts de la base de données.
+                return context.Contacts.Include(c => c.ReseauSociauxes).ToList();  // Récupération des contacts et de leurs réseaux_sociaux associés.
             }
         }
-        
 
         
     }

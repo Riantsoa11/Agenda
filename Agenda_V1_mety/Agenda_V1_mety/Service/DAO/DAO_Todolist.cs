@@ -18,6 +18,13 @@ namespace Agenda_V1_mety.Service.DAO
             return true;
         }
 
+        //methode prendre idtodolist
+        public int GetIdTodolist(object todolist)
+        {
+            Todolist todolist1 = (Todolist)todolist;
+            return todolist1.Idtodolist;
+        }
+
         //recuperer la liste des taches
         public IEnumerable<Todolist> GetTodolists()
         {

@@ -56,6 +56,13 @@ namespace Agenda_V1_mety.Service.DAO
             request.MaxResults = 10;
             request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
 
+            //si y a pas d'evenement , on affiche un message
+            if (request == null)
+            {
+                Console.WriteLine("No upcoming events found.");
+            }
+
+
             // Récupérer les événements
             Events events = request.Execute();
             return events.Items;

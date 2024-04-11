@@ -10,6 +10,9 @@
     <Compile Update="View\AjouterPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AjouterTask.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Calendrier.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AjouterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AjouterTask.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Calendrier.xaml">

@@ -38,21 +38,20 @@ namespace Agenda_V1_mety.View
 
         private void BTN_Task_Click(object sender, RoutedEventArgs e)
         {
-            //Container.Children.Clear();
-            //PageTask pageTask = new PageTask();
-            //Container.Children.Add(pageTask);
-            //si aucun todolist n'est selectionné on affiche un message d'erreur
+            
             if (!dAO_Todolist.CheckTodolistSelectionne(DG_Todolist.SelectedItem))
             {
                 MessageBox.Show("Veuillez selectionner une todolist");
                 return;
             }
-            // Récupération du todolist sélectionné dans le DataGrid
+            //recuperation de la todolist selectionné par son id
             Todolist todolist = (Todolist)DG_Todolist.SelectedItem;
-            // Instanciation de la page PageTask
-            PageTask pageTask = new PageTask(todolist);
+            int idtodolist = dAO_Todolist.GetIdTodolist(todolist);
+            Container.Children.Clear();
+            PageTask pageTask = new PageTask(idtodolist);
             Container.Children.Add(pageTask);
-            
+
+
 
 
         }

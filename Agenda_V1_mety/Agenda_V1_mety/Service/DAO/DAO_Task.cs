@@ -26,6 +26,17 @@ namespace Agenda_V1_mety.Service.DAO
             }
         }
 
+
+
+        //methode gettask by todolistid
+        public IEnumerable<Task> GetTasksBytodolistId(int idtodolist)
+        {
+            using (var context = new AgendaAndrianasoloharisonContext())
+            {
+                return context.Tasks.Where(t => t.TodolistIdtodolist == idtodolist).ToList();
+            }
+        }
+
         //modifier une tache
         public void ModifyTask(Task task)
         {

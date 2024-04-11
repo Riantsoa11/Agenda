@@ -16,6 +16,12 @@
     <Compile Update="View\ContactPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PageTask.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PageToDoList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ReseauContact.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +40,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ContactPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PageTask.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PageToDoList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ReseauContact.xaml">

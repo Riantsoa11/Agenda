@@ -30,6 +30,4 @@ public partial class Contact
     public virtual ICollection<ReseauSociaux> ReseauSociauxes { get; set; } = new List<ReseauSociaux>();
 
     public virtual ICollection<Status> Statuses { get; set; } = new List<Status>();
-
-    public virtual ICollection<Todolist> Todolists { get; set; } = new List<Todolist>();
 }

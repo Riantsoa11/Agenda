@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ETCWymCxj6Gkd07lF6PwJIBCq14SAGYdXhwkD9qQQ/c5t17uVNqm/+F2Mm7duc5T5SPTunO5IqKkbQs2XrJEiw==",
+  "dgSpecHash": "J3KUgD6IsvWLACfk/HV8QCK1v+Od8rlYKFB0OCFCWxRu4+JeyqovLTNnA9kOWGS/W4GcDdQ+BbPiDvpMnpWdZg==",
   "success": true,
-  "projectFilePath": "D:\\Tsiory\\Riantsoa11\\Agenda\\Agenda_V1_mety\\Agenda_V1_mety\\Agenda_V1_mety.csproj",
+  "projectFilePath": "D:\\Tsiory\\Riantsoa11\\Projet Agenda\\Agenda_Tsiory_Mety\\Agenda_V1_mety\\Agenda_V1_mety\\Agenda_V1_mety.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tsior\\.nuget\\packages\\controlzex\\4.3.0\\controlzex.4.3.0.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\google.apis\\1.67.0\\google.apis.1.67.0.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\google.apis.auth\\1.67.0\\google.apis.auth.1.67.0.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\google.apis.calendar.v3\\1.67.0.3374\\google.apis.calendar.v3.1.67.0.3374.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\google.apis.core\\1.67.0\\google.apis.core.1.67.0.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\mahapps.metro\\2.0.0\\mahapps.metro.2.0.0.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\materialdesigncolors\\3.0.0\\materialdesigncolors.3.0.0.nupkg.sha512",
@@ -29,8 +33,10 @@
     "C:\\Users\\tsior\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
-    "C:\\Users\\tsior\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
+    "C:\\Users\\tsior\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\tsior\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

@@ -6,7 +6,20 @@
              xmlns:local="clr-namespace:Agenda_V1_mety.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid Background="#FF88758E">
-        <Image Height="400" Width="600" Source="\Service\Images\calendrier.jpg"/>
+        <StackPanel>
+            <Button Content="Actualiser" Click="RefreshButton_Click" Margin="5"/>
+            <ListBox ItemsSource="{Binding Events}" HorizontalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Summary}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Start.DateTime}" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>

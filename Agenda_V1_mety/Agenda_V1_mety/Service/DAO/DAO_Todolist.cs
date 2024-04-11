@@ -8,6 +8,16 @@ namespace Agenda_V1_mety.Service.DAO
 {
     public class DAO_Todolist
     {
+        //check si une todolist est selectionné
+        public bool CheckTodolistSelectionne(object todolist)
+        {
+            if (todolist == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         //recuperer la liste des taches
         public IEnumerable<Todolist> GetTodolists()
         {

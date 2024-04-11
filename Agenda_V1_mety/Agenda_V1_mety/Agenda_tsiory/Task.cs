@@ -13,7 +13,5 @@ public partial class Task
 
     public int TodolistIdtodolist { get; set; }
 
-    public int TodolistContactIdcontact { get; set; }
-
-    public virtual Todolist Todolist { get; set; } = null!;
+    public virtual Todolist TodolistIdtodolistNavigation { get; set; } = null!;
 }

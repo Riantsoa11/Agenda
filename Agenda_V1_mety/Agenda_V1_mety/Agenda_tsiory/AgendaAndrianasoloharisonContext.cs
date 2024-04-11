@@ -29,9 +29,10 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        //=> optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
-    //connnexion a la base de donnée distance
-    => optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+    //connection en local
+        => optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+    //connection à distance
+            //=> optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -136,55 +137,38 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
 
         modelBuilder.Entity<Task>(entity =>
         {
-            entity.HasKey(e => new { e.Idtask, e.TodolistIdtodolist, e.TodolistContactIdcontact })
-                .HasName("PRIMARY")
-                .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0, 0 });
+            entity.HasKey(e => e.Idtask).HasName("PRIMARY");
 
             entity.ToTable("task");
 
-            entity.HasIndex(e => new { e.TodolistIdtodolist, e.TodolistContactIdcontact }, "fk_task_todolist1_idx");
+            entity.HasIndex(e => e.TodolistIdtodolist, "fk_task_todolist1_idx");
 
-            entity.Property(e => e.Idtask)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("idtask");
-            entity.Property(e => e.TodolistIdtodolist).HasColumnName("todolist_idtodolist");
-            entity.Property(e => e.TodolistContactIdcontact).HasColumnName("todolist_contact_idcontact");
+            entity.Property(e => e.Idtask).HasColumnName("idtask");
             entity.Property(e => e.Description)
                 .HasMaxLength(45)
                 .HasColumnName("description");
             entity.Property(e => e.Nomtask)
                 .HasMaxLength(45)
                 .HasColumnName("nomtask");
+            entity.Property(e => e.TodolistIdtodolist).HasColumnName("todolist_idtodolist");
 
-            entity.HasOne(d => d.Todolist).WithMany(p => p.Tasks)
-                .HasForeignKey(d => new { d.TodolistIdtodolist, d.TodolistContactIdcontact })
+            entity.HasOne(d => d.TodolistIdtodolistNavigation).WithMany(p => p.Tasks)
+                .HasForeignKey(d => d.TodolistIdtodolist)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_task_todolist1");
         });
 
         modelBuilder.Entity<Todolist>(entity =>
         {
-            entity.HasKey(e => new { e.Idtodolist, e.ContactIdcontact })
-                .HasName("PRIMARY")
-                .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+            entity.HasKey(e => e.Idtodolist).HasName("PRIMARY");
 
             entity.ToTable("todolist");
 
-            entity.HasIndex(e => e.ContactIdcontact, "fk_todolist_contact1_idx");
-
-            entity.Property(e => e.Idtodolist)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("idtodolist");
-            entity.Property(e => e.ContactIdcontact).HasColumnName("contact_idcontact");
+            entity.Property(e => e.Idtodolist).HasColumnName("idtodolist");
             entity.Property(e => e.Date).HasColumnName("date");
             entity.Property(e => e.Descriptionl)
                 .HasMaxLength(45)
                 .HasColumnName("descriptionl");
-
-            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.Todolists)
-                .HasForeignKey(d => d.ContactIdcontact)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_todolist_contact1");
         });
 
         OnModelCreatingPartial(modelBuilder);

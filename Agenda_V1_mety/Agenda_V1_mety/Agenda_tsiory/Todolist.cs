@@ -11,9 +11,5 @@ public partial class Todolist
 
     public string? Descriptionl { get; set; }
 
-    public int ContactIdcontact { get; set; }
-
-    public virtual Contact ContactIdcontactNavigation { get; set; } = null!;
-
     public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
 }

@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:Agenda_V1_mety.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="DimGray">
-        
+    <Grid Background="#FF88758E">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -19,48 +19,32 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Button Content="Task" HorizontalAlignment="Center"  FontSize="20" VerticalAlignment="Center" Width="100" Height="50" Click="BTN_Task_Click"/>
-                <!-- Popup -->
-                <Popup Name="popup1" Placement="Center" IsOpen="False">
-                    <Border Background="LightGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                        <Grid Margin="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="Entrez votre Task :"/>
-                            <TextBox Name="TB_nomTask" Grid.Row="1" Margin="0,5"/>
-                            <TextBlock Text="Entrez votre Description :"/>
-                            <TextBox Name="TB_nomDescription" Grid.Row="2" Margin="0,5"/>
-
-                            <Button Content="Valider" Grid.Row="3" Click="ValideTask_Click" HorizontalAlignment="Right" Margin="0,5"/>
-                        </Grid>
-                    </Border>
-                </Popup>
             </Grid>
             <Grid Grid.Column="1">
                 <Button Content="To Do List" HorizontalAlignment="Center"  FontSize="20" VerticalAlignment="Center" Width="100" Height="50" Click="BTN_Todolist_Click"/>
-                <Popup Name="popup2" Placement="Center" IsOpen="False">
-                    <Border Background="LightGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                        <Grid Margin="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Text="Entrez votre Task :"/>
-                            <TextBox Name="TB_nomTodoList" Grid.Row="1" Margin="0,5"/>
-                            <TextBlock Text="Entrez votre Description :"/>
-                            <TextBox Name="TB_nomDescriptionTodolist" Grid.Row="3" Margin="0,5"/>
-                     
-                             <Button Content="Valider"  Grid.Row="4"  Click="ValideTodolisk_Click" HorizontalAlignment="Right" Margin="0,5"/>
-                        </Grid>
-                    </Border>
-                </Popup>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Name="Container">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <DataGrid Name="DG_Todolist" Background="Azure">
+
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button Content="Delete" HorizontalAlignment="Center" FontSize="20" Width="150" Height="50" VerticalAlignment="Center" Click="BTN_Delete_Click"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button Content="Modifier" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" Width="150" Height="50" Click="BTN_Modifier_Click" />
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

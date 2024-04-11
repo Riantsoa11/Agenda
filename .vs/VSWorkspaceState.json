@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Agenda_V1_mety",
+    "\\Agenda_V1_mety\\Agenda_V1_mety",
+    "\\Agenda_V1_mety\\Agenda_V1_mety\\View"
   ],
-  "SelectedNode": "\\Agenda.sln",
+  "SelectedNode": "\\Agenda_V1_mety\\Agenda_V1_mety\\View\\Calendrier.xaml",
   "PreviewInSolutionExplorer": false
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\App.xaml
-91091938866
+101056933601
 
-23644882791
+26-2036922477
 224-71867416
-MainWindow.xaml;View\AjouterPage.xaml;View\AjouterTask.xaml;View\Calendrier.xaml;View\ContactPage.xaml;View\PageTask.xaml;View\PageToDoList.xaml;View\ReseauContact.xaml;View\ToDoList.xaml;
+MainWindow.xaml;View\AjouterPage.xaml;View\AjouterTask.xaml;View\Calendrier.xaml;View\ContactPage.xaml;View\PageTask.xaml;View\PageToDoList.xaml;View\Parametre.xaml;View\ReseauContact.xaml;View\ToDoList.xaml;
 
 False
 

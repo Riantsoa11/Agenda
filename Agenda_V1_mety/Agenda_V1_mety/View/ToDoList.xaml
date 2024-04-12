@@ -30,7 +30,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <DataGrid Name="DG_Todolist" Background="Azure">
+                <DataGrid Name="DG_Todolist" Background="Azure" Width="400">
 
                 </DataGrid>
             </Grid>

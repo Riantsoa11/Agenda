@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using Agenda_V1_mety.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Agenda_V1_mety.Service.DAO;
 
 namespace Agenda_V1_mety.Agenda_tsiory;
 
 public partial class AgendaAndrianasoloharisonContext : DbContext
 {
+    //method to get the connection string je supprime si ça marche pas
+
+    ConnectionString_Manager _connectionString_Manager;
+
     public AgendaAndrianasoloharisonContext()
     {
+        _connectionString_Manager = new ConnectionString_Manager();
     }
 
     public AgendaAndrianasoloharisonContext(DbContextOptions<AgendaAndrianasoloharisonContext> options)
@@ -30,9 +38,19 @@ public partial class AgendaAndrianasoloharisonContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
     //connection en local
-        => optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+    => optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
     //connection à distance
-            //=> optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+    //        => optionsBuilder.UseMySql("server=172.31.69.115;port=3306;user=tsiory;password=1234;database=agenda_andrianasoloharison", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+
+    //Protection des informations sensibles dans la connexion string
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    if (!optionsBuilder.IsConfigured)
+    //    {
+    //        optionsBuilder.UseMySql(_connectionString_Manager.ConString, Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.26-mysql"));
+    //    }
+    //}
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

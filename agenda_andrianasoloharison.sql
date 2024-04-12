@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `Email` varchar(45) NOT NULL,
   `Phone` varchar(45) NOT NULL,
   `Ville` varchar(45) NOT NULL,
-  `statut` enum('Amis','Collegue','Famille') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `statut` enum('Amis','Collegue','Famille') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Reseau` varchar(45) NOT NULL,
   PRIMARY KEY (`idcontact`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `contact`
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `profilsreseau` (
   `reseau_sociaux_idreseau_sociaux` int NOT NULL,
   PRIMARY KEY (`idprofilsreseau`),
   KEY `fk_profilsreseau_reseau_sociaux1_idx` (`reseau_sociaux_idreseau_sociaux`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -79,13 +79,13 @@ CREATE TABLE IF NOT EXISTS `profilsreseau` (
 DROP TABLE IF EXISTS `reseau_sociaux`;
 CREATE TABLE IF NOT EXISTS `reseau_sociaux` (
   `idreseau_sociaux` int NOT NULL AUTO_INCREMENT,
-  `Reseau_sociaux` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Reseau_sociaux` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `Liens` varchar(45) DEFAULT NULL,
   `Profil` varchar(45) DEFAULT NULL,
   `contact_idcontact` int NOT NULL,
   PRIMARY KEY (`idreseau_sociaux`),
   KEY `fk_reseau_sociaux_contact1_idx` (`contact_idcontact`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `reseau_sociaux`
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `status` (
   `contact_idcontact1` int NOT NULL,
   PRIMARY KEY (`idStatus`,`contact_idcontact`,`contact_idcontact1`),
   KEY `fk_Status_contact_idx` (`contact_idcontact1`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `todolist_idtodolist` int NOT NULL,
   PRIMARY KEY (`idtask`),
   KEY `fk_task_todolist1_idx` (`todolist_idtodolist`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `todolist` (
   `date` date DEFAULT NULL,
   `descriptionl` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtodolist`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Contraintes pour les tables déchargées

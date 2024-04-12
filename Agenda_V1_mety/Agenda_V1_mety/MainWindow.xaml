@@ -65,12 +65,12 @@
                     </Button>
                 </Grid>
                 <Grid Grid.Row="4">
-                    <Button Content="Retour" Foreground="Black" Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_Retour" Click="BTN_Retour_Click">
+                    <Button Content="Parametre" Foreground="Black" Height="60" Width="160" HorizontalContentAlignment="Center" Name="BTN_Parametre" Click="BTN_Parametre_Click">
                         <Button.ContentTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="🔙" FontSize="30" />
-                                    <TextBlock Text="Retour" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="" FontSize="30" />
+                                    <TextBlock Text="Parametre" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </StackPanel>
                             </DataTemplate>
                         </Button.ContentTemplate>

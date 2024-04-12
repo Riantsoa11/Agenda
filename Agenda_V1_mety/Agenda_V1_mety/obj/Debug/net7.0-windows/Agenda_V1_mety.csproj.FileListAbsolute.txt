@@ -179,3 +179,6 @@ D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_m
 D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\obj\Debug\net7.0-windows\View\PageTask.baml
 D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\obj\Debug\net7.0-windows\View\AjouterTask.g.cs
 D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\obj\Debug\net7.0-windows\View\AjouterTask.baml
+D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\bin\Debug\net7.0-windows\Agenda_V1_mety.dll.config
+D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\obj\Debug\net7.0-windows\View\Parametre.g.cs
+D:\Tsiory\Riantsoa11\Projet Agenda\Agenda_Tsiory_Mety\Agenda_V1_mety\Agenda_V1_mety\obj\Debug\net7.0-windows\View\Parametre.baml

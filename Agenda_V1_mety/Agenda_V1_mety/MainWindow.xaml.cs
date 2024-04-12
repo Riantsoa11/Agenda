@@ -36,7 +36,7 @@ namespace Agenda_V1_mety
             else
             {
                 MessageBox.Show("DatabaseNotConnected");
-                BoutonStatut(false); 
+                BoutonStatut(false);
             }
 
         }
@@ -45,7 +45,7 @@ namespace Agenda_V1_mety
             BTN_Contact.IsEnabled = estActif;
             BTN_Calendrier.IsEnabled = estActif;
             BTN_ToDoList.IsEnabled = estActif;
-        }       
+        }
 
         private void BTN_Contact_Click(object sender, RoutedEventArgs e)
         {
@@ -54,10 +54,6 @@ namespace Agenda_V1_mety
             Window_Container.Children.Add(contact);
         }
 
-        private void BTN_Retour_Click(object sender, RoutedEventArgs e)
-        {
-            Window_Container.Children.Clear();
-        }
 
         private void BTN_Calendrier_Click(object sender, RoutedEventArgs e)
         {
@@ -73,5 +69,11 @@ namespace Agenda_V1_mety
             Window_Container.Children.Add(toDoList);
         }
 
+        private void BTN_Parametre_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Container.Children.Clear();
+            Parametre parametre = new Parametre();
+            Window_Container.Children.Add(parametre);
+        }
     }
 }

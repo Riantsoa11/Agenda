@@ -3,8 +3,8 @@
     "",
     "\\Agenda_V1_mety",
     "\\Agenda_V1_mety\\Agenda_V1_mety",
-    "\\Agenda_V1_mety\\Agenda_V1_mety\\View"
+    "\\Agenda_V1_mety\\Agenda_V1_mety\\Service",
+    "\\Agenda_V1_mety\\Agenda_V1_mety\\Service\\DAO"
   ],
-  "SelectedNode": "\\Agenda_V1_mety\\Agenda_V1_mety\\View\\Calendrier.xaml",
   "PreviewInSolutionExplorer": false
 }

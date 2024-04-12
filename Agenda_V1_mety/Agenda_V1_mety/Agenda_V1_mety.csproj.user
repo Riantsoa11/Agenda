@@ -25,6 +25,9 @@
     <Compile Update="View\PageToDoList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Parametre.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ReseauContact.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\PageToDoList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Parametre.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ReseauContact.xaml">
